@@ -4,7 +4,11 @@
 
 ### pre-requisite
 
-> in GCP : 
+> in GCP 
+#### create a project and copy its ID
+#### you may have to create also 3 datasets : bronze, silver, gold if creation is not possible with airflow
+
+> in GCP (buckets): 
 #### create bucket, folders and upload files :
 
 demo_etl_data_ing
@@ -18,20 +22,38 @@ demo_etl_data_ing
         ---erp_px_cat_g1v2.csv
 
 
-> in the python project : 
-#### change names in the dag file (paths, projects, etc.):
+> download the code in this repo and in the python code : 
+#### adapt names in the /dag files (paths, projects, etc.):
 - bronze dataset id (ex: my-project-demo-dwh.dwh_bronze)
 - silver dataset id
 - gold dataset id
 - bucket id (ex: **my-project-demo-dwh**)
 - client id (storage@project...) (service principal) (ex : sa-bq-demo-dwh@my-project-demo-dwh.iam.gserviceaccount.com)
 
-> in GCP :
+#### adapt names in the /sql files (paths, projects, etc.)
+
+> in GCP (IAM)
+#### create a service account 
+(for example sa-bq-demo-dwh@my-project-demo-dwh.iam.gserviceaccount.com)
+> IAM and administration/IAM
+> grant access
+
+#### create and download the service account json file and copy it into the json demo file (/gcp)
+> IAM and administration/service accounts
+> click on your new service account
+> click on Keys
+> click on add a key 
+> create a key
+> select JSON format
+
 #### give client id access to the following iam roles :
 - Administrateur BigQuery
 - Administrateur de compte de service
 - Administrateur de dossier Storage
 - Créateur de jetons du compte de service
+
+#### authorize this API in GCP: IAM Service account Credential API
+
 
 > in the python Dockerfile : 
 #### by default the dockerfile is filled with this (delete this line) :
@@ -70,6 +92,7 @@ sql/
 - sql/gold/dml_gold_table_dim.sql
 - sql/gold/dml_gold_table_facts.sql
 
+#### 
 
 #### go in GCP cloud shell, make a virtualenv, install astro, make directories
 
