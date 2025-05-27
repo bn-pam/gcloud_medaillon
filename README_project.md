@@ -143,7 +143,7 @@ BONUS CMD :
 #### go to the local url provided by astro :
 > looks like (click on the one is given):
 http://localhost:8080
-> log in as admin (pass : admin)
+> log in as admin (default pass : admin)
 
 #### configure a new connection for airflow
 > go to admin/connections
