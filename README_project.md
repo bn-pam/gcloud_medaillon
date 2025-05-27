@@ -152,7 +152,7 @@ http://localhost:8080
 
 | Field            | Value                            |
 |------------------|----------------------------------|
-| Connection Id    | `bq-airflow"`                    |
+| Connection Id    | `bq-airflow`                    |
 | Connection Type  | `Google BigQuery`                |
 | Project Id       | `my-project-demo-dwh`            |
 | Keyfile Path     | `/usr/local/airflow/gcp/k.json`  |
