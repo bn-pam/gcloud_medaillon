@@ -149,7 +149,15 @@ http://localhost:8080
 > go to admin/connections
 > add connection
 > provide the following infos :
-> - connection id : name you gave in the default var in ``GCP_CONN_ID = Variable.get("GCP_CONN_ID", default_var="bq-airflow")``
+
+| Field            | Value                            |
+|------------------|----------------------------------|
+| Connection Id    | `bq-airflow"`                    |
+| Connection Type  | `Google BigQuery`                |
+| Project Id       | `my-project-demo-dwh`            |
+| Keyfile Path     | `/usr/local/airflow/gcp/k.json`  |
+
+> -  connection id : the name you gave in the default var in ``GCP_CONN_ID = Variable.get("GCP_CONN_ID", default_var="bq-airflow")``
 > - connection type : Google BigQuery
 > - project id : <my-gcp-project-id> (ex : my-project-demo-dwh) 
 > - keyfile path : (ex : /usr/local/airflow/gcp/k.json) as you specified it in the docker
